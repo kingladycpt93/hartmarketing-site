@@ -2,22 +2,24 @@
    1. LOAD CUSTOM FONTS
    ========================================= */
 
-/* The Italic Serif (Ratio Modern) */
+/* The Italic Serif (Headings) */
 @font-face {
     font-family: 'Ratio Modern';
-    /* Windows is likely hiding the .otf extension, making the file 'ratiomodern.ito.otf' */
-    src: url('assets/ratiomodern.ito.otf') format('opentype');
+    /* PATH: From style.css -> assets folder -> fonts folder -> ratio.otf */
+    src: url('assets/fonts/ratio.otf') format('opentype');
     font-weight: normal;
-    font-style: normal;
+    font-style: italic;
+    font-display: swap;
 }
 
-/* The Display Sans (Bomstad Medium) */
+/* The Display Sans (Logo & Footer) */
 @font-face {
     font-family: 'Bomstad';
-    /* Using the Medium version you selected */
-    src: url('assets/BomstadDisplay-Medium.ttf') format('truetype');
+    /* PATH: From style.css -> assets folder -> fonts folder -> BomstadDisplay-Medium.otf */
+    src: url('assets/fonts/BomstadDisplay-Medium.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
+    font-display: swap;
 }
 
 /* =========================================
@@ -30,11 +32,14 @@
 }
 
 body {
+    /* Apply Bomstad to the whole body */
     font-family: 'Bomstad', sans-serif; 
     color: white;
-    height: 100vh;
-    overflow: hidden;
+    min-height: 100vh;
+    width: 100%;
+    overflow-x: hidden;
     background-color: black;
+    font-weight: normal; 
 }
 
 /* =========================================
@@ -46,6 +51,8 @@ body {
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
+    width: auto;
+    height: auto;
     z-index: -2;
     object-fit: cover;
 }
@@ -64,43 +71,47 @@ body {
    4. LAYOUT CONTAINER
    ========================================= */
 .content-container {
-    height: 100%;
+    min-height: 100vh;
     width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     padding: 50px;
+    position: relative;
+    z-index: 1;
 }
 
 /* =========================================
    5. TYPOGRAPHY & SECTIONS
    ========================================= */
+header {
+    width: 100%;
+}
 
-/* --- Header / Logo --- */
 .logo {
-    font-family: 'Bomstad', sans-serif;
-    font-size: 1.2rem;
+    font-family: 'Bomstad', sans-serif; 
+    font-size: 1.4rem;
     line-height: 1.2;
     text-transform: uppercase;
     letter-spacing: 1px;
-    font-weight: bold;
 }
 
-/* --- Center Main Text --- */
 main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     text-align: center;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    flex-grow: 1;
     width: 100%;
-    padding: 0 20px;
+    padding: 20px 0;
 }
 
 h1 {
     font-family: 'Ratio Modern', serif;
     font-size: 6rem;
     font-weight: 400;
+    font-style: italic;
     line-height: 1.1;
     margin-bottom: 15px;
 }
@@ -109,6 +120,7 @@ h1 {
     font-family: 'Ratio Modern', serif;
     font-size: 1.8rem;
     font-weight: 400;
+    font-style: italic;
     opacity: 1;
 }
 
@@ -116,18 +128,19 @@ h1 {
     font-family: 'Ratio Modern', serif;
     font-size: 1.1rem;
     margin-top: 25px;
+    font-style: italic;
     opacity: 0.8;
 }
 
-/* --- Footer --- */
 footer {
     display: flex;
     justify-content: space-between;
     align-items: flex-end;
-    font-family: 'Bomstad', sans-serif;
+    font-family: 'Bomstad', sans-serif; 
     font-size: 0.9rem;
     line-height: 1.5;
     letter-spacing: 0.5px;
+    width: 100%;
 }
 
 footer a {
@@ -161,7 +174,7 @@ footer a:hover {
         align-items: center;
         text-align: center;
         gap: 20px;
-        padding-bottom: 20px;
+        padding-bottom: 10px;
     }
     
     .left-align, .center-align, .right-align {

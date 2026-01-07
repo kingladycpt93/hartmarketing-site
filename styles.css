@@ -1,21 +1,21 @@
 /* =========================================
-   1. LOAD CUSTOM FONTS FROM ASSETS FOLDER
+   1. LOAD CUSTOM FONTS
    ========================================= */
 
 /* The Italic Serif (Ratio Modern) */
 @font-face {
     font-family: 'Ratio Modern';
-    /* Using the exact filename you uploaded */
-    src: url('assets/fonnts.com-Ratio-Modern-.otf') format('opentype');
+    /* Windows is likely hiding the .otf extension, making the file 'ratiomodern.ito.otf' */
+    src: url('assets/ratiomodern.ito.otf') format('opentype');
     font-weight: normal;
     font-style: normal;
 }
 
-/* The Display Sans (Bomstad Regular) */
+/* The Display Sans (Bomstad Medium) */
 @font-face {
     font-family: 'Bomstad';
-    /* Using the exact filename you uploaded */
-    src: url('assets/BomstadDisplay-Regular.ttf') format('truetype');
+    /* Using the Medium version you selected */
+    src: url('assets/BomstadDisplay-Medium.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -30,12 +30,11 @@
 }
 
 body {
-    /* Defaulting to Bomstad for general text */
     font-family: 'Bomstad', sans-serif; 
     color: white;
-    height: 100vh; /* Full viewport height */
-    overflow: hidden; /* Prevents scrolling */
-    background-color: black; /* Fallback color */
+    height: 100vh;
+    overflow: hidden;
+    background-color: black;
 }
 
 /* =========================================
@@ -47,8 +46,8 @@ body {
     bottom: 0;
     min-width: 100%;
     min-height: 100%;
-    z-index: -2; /* Sends video to the back */
-    object-fit: cover; /* Ensures video covers screen */
+    z-index: -2;
+    object-fit: cover;
 }
 
 .overlay {
@@ -57,7 +56,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.4); /* 40% black overlay for readability */
+    background: rgba(0, 0, 0, 0.4);
     z-index: -1;
 }
 
@@ -69,8 +68,8 @@ body {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Pushes Header top, Footer bottom */
-    padding: 50px; /* Space around the edges */
+    justify-content: space-between;
+    padding: 50px;
 }
 
 /* =========================================
@@ -93,21 +92,21 @@ main {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Perfectly centers the block */
+    transform: translate(-50%, -50%);
     width: 100%;
     padding: 0 20px;
 }
 
 h1 {
-    font-family: 'Ratio Modern', serif; /* Your custom Italic font */
-    font-size: 6rem; /* Large size matches design */
+    font-family: 'Ratio Modern', serif;
+    font-size: 6rem;
     font-weight: 400;
     line-height: 1.1;
-    margin-bottom: 10px;
+    margin-bottom: 15px;
 }
 
 .subtitle {
-    font-family: 'Ratio Modern', serif; /* Also italic per design */
+    font-family: 'Ratio Modern', serif;
     font-size: 1.8rem;
     font-weight: 400;
     opacity: 1;
@@ -123,8 +122,8 @@ h1 {
 /* --- Footer --- */
 footer {
     display: flex;
-    justify-content: space-between; /* Spreads items: left, center, right */
-    align-items: flex-end; 
+    justify-content: space-between;
+    align-items: flex-end;
     font-family: 'Bomstad', sans-serif;
     font-size: 0.9rem;
     line-height: 1.5;
